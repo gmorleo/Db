@@ -1,0 +1,17 @@
+{
+    "productName": "Db",
+    "servletContainer": {
+        "id": "tomcat8",
+        "version": "8.0.44",
+        "description": "Tomcat 8.0.44"
+    },
+    "serverConfig": {
+        
+    },
+    "webApps": [
+        {
+            "contextPath": "/Db",
+            "resourceBase": "webapps/Db-1.0.0.war"
+        }
+    ]
+}
