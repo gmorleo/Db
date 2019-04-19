@@ -7,7 +7,6 @@ public class PersonaDTO {
     private int id;
     private String nome;
     private String cognome;
-    private int eta;
     private String Indirizzo;
     private String citta;
     private String provincia;
@@ -37,13 +36,6 @@ public class PersonaDTO {
         this.cognome = conome;
     }
 
-    public int getEta() {
-        return eta;
-    }
-
-    public void setEta(int eta) {
-        this.eta = eta;
-    }
 
     public String getIndirizzo() {
         return Indirizzo;
@@ -83,7 +75,6 @@ public class PersonaDTO {
     public PersonaDTO(String nome, String cognome, int eta, String indirizzo, String citta, String provincia, Date dob) {
         this.nome = nome;
         this.cognome = cognome;
-        this.eta = eta;
         Indirizzo = indirizzo;
         this.citta = citta;
         this.provincia = provincia;
@@ -94,7 +85,6 @@ public class PersonaDTO {
         this.id = id;
         this.nome = nome;
         this.cognome = cognome;
-        this.eta = eta;
         Indirizzo = indirizzo;
         this.citta = citta;
         this.provincia = provincia;

@@ -55,7 +55,6 @@ public class PersonaService implements IPersonaService {
         Persona persona = new Persona(
                 p.getNome(),
                 p.getCognome(),
-                p.getEta(),
                 p.getDob(),
                 p.getIndirizzo(),
                 p.getCitta(),

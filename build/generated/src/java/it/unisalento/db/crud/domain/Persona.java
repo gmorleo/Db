@@ -3,6 +3,7 @@ package it.unisalento.db.crud.domain;
 
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import java.util.Date;
 import javax.persistence.Column;
@@ -21,13 +22,13 @@ import javax.persistence.TemporalType;
 @Table(name="persona"
     ,catalog="crud"
 )
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class Persona  implements java.io.Serializable {
 
 
      private Integer id;
      private String nome;
      private String cognome;
-     private Integer eta;
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd", timezone = "Europe/Rome")
      private Date dob;
      private String indirizzo;
@@ -43,10 +44,9 @@ public class Persona  implements java.io.Serializable {
         this.cognome = cognome;
         this.dob = dob;
     }
-    public Persona(String nome, String cognome, Integer eta, Date dob, String indirizzo, String citta, String provincia) {
+    public Persona(String nome, String cognome, Date dob, String indirizzo, String citta, String provincia) {
        this.nome = nome;
        this.cognome = cognome;
-       this.eta = eta;
        this.dob = dob;
        this.indirizzo = indirizzo;
        this.citta = citta;
@@ -83,16 +83,6 @@ public class Persona  implements java.io.Serializable {
     
     public void setCognome(String cognome) {
         this.cognome = cognome;
-    }
-
-    
-    @Column(name="eta")
-    public Integer getEta() {
-        return this.eta;
-    }
-    
-    public void setEta(Integer eta) {
-        this.eta = eta;
     }
 
     @Temporal(TemporalType.DATE)
